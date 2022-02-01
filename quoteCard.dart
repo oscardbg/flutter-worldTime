@@ -5,9 +5,11 @@ class QuoteCard extends StatelessWidget {
   const QuoteCard({
     Key? key,
     required this.quote,
+    required this.delete,
   }) : super(key: key);
 
   final Quote quote;
+  final VoidCallback delete;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,18 @@ class QuoteCard extends StatelessWidget {
             Text(
               quote.author,
               style: TextStyle(fontSize: 14, color: Colors.grey[800]),
+            ),
+            SizedBox(height: 8,),
+            TextButton(
+              onPressed: delete, 
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.delete),
+                  SizedBox(width: 20,),
+                  Text('Delete quote')
+                ],
+              ),
             ),
           ],
         ),
