@@ -4,7 +4,7 @@ import 'package:nninja_tut01/pages/loading.dart';
 import './pages/home.dart';
 
 void main() => runApp(MaterialApp(
-  initialRoute: '/home',
+  initialRoute: '/',
   routes: {
     '/': (context) => Loading(),
     '/home': (context) => Home(),
