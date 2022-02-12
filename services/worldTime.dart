@@ -7,6 +7,7 @@ class WorldTime{
   String wtime = "";
   String flag = "";
   String url = "";
+  bool isDay = false;
 
   WorldTime({this.location="", this.flag="", this.url=""});
 
@@ -23,6 +24,8 @@ class WorldTime{
       now = now.add(Duration(hours: int.parse(offset)));
 
       wtime = DateFormat.jm().format(now);
+
+      isDay = now.hour > 6 && now.hour < 20;
     } catch (e) {
       wtime = 'Error trying to get TIME data...';
     }
